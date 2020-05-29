@@ -35,6 +35,7 @@ const IMAGE = require("../../img/intro.png");
 const projectsArr = [
   {
     src: IMAGE,
+    images: [IMAGE, IMAGE, IMAGE, IMAGE],
     title: "Questionnaire",
     position: "back-end",
     stack: ["React", "SocketIO", "Mysql", "Sequelize", "AWS-RDS", "AWS-EC2"],
@@ -53,6 +54,7 @@ const projectsArr = [
   {
     src: IMAGE,
     title: "questionnaire",
+    images: ["a", "b", "c", "d"],
     position: "back-end",
     stack: ["React", "SocketIO", "Mysql", "Sequelize", "AWS-RDS", "AWS-EC2"],
     gitHub: "https://github.com/funetes/QuestRunner-client-mirrored",
@@ -74,6 +76,7 @@ const projectsArr = [
   {
     src: IMAGE,
     title: "Questionnaire",
+    images: ["a", "b", "c", "d"],
     position: "back-end",
     stack: ["React", "SocketIO", "Mysql", "Sequelize", "AWS-RDS", "AWS-EC2"],
     gitHub: "https://github.com/funetes/QuestRunner-client-mirrored",

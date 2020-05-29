@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { fadeIn } from "../../utils";
+import Modal from "../modal/Modal";
 
 const Container = styled.div`
   display: flex;
@@ -66,12 +67,16 @@ const DescriptionList = styled.ul`
   list-style-type: disc;
 `;
 const Description = styled.li`
-  /* text-align: left; */
   margin: 3px 0px;
 `;
 const Project = ({ project }) => {
+  const [openModal, setOpenModal] = useState(false);
+
   const handleImgClick = () => {
-    console.log("clicked");
+    setOpenModal(true);
+  };
+  const closeModal = () => {
+    setOpenModal(false);
   };
   return (
     <Container>
@@ -100,6 +105,11 @@ const Project = ({ project }) => {
           ))}
         </DescriptionList>
       </ProjectDescriptitonContainer>
+      <Modal
+        isOpen={openModal}
+        close={closeModal}
+        projectImg={project.images}
+      />
     </Container>
   );
 };

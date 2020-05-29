@@ -19,12 +19,6 @@ const data = {
   ],
 };
 
-// height: 100vh;
-
-//   margin-top: 30px;
-//   flex-direction: column;
-//   align-items: center;
-
 const Container = styled.div`
   display: flex;
   margin-top: 30px;
