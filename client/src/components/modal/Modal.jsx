@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "../slider/Slider";
+import { fadeIn } from "../../utils";
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -14,22 +16,25 @@ const Content = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 320px;
   border-radius: 10px;
   background-color: white;
   transform: translate(-50%, -50%);
+  @media (max-width: 480px) {
+    top: 40%;
+    width: 90%;
+  }
+  animation: ${fadeIn} 0.5s linear;
 `;
 
 const Modal = ({ isOpen, close, projectImg }) => {
   // projectImg는 서버에서 불러오는게 좋지 않을까?
-  console.log(projectImg);
   return (
     <>
       {isOpen ? (
         <>
           <ModalOverlay onClick={close} />
           <Content>
-            <p>this is title</p>
+            <Slider images={projectImg} />
           </Content>
         </>
       ) : null}

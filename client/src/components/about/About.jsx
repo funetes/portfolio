@@ -71,7 +71,7 @@ const SkillsList = styled.ul`
   }
 `;
 const SkillsItem = styled.li`
-  width: 30%;
+  width: 50%;
   margin: 10px auto;
   padding: 3px;
   @media (max-width: 480px) {

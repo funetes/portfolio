@@ -21,6 +21,7 @@ const Container = styled.div`
 
 const ProjectImg = styled.img`
   width: 65%;
+  cursor: pointer;
   @media (max-width: 480px) {
     width: 100%;
   }
