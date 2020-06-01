@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Slider from "../slider/Slider";
 import { fadeIn } from "../../utils";
+import PropTypes from "prop-types";
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -40,6 +41,12 @@ const Modal = ({ isOpen, close, projectImg }) => {
       ) : null}
     </>
   );
+};
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  close: PropTypes.func.isRequired,
+  projectImg: PropTypes.array.isRequired,
 };
 
 export default Modal;

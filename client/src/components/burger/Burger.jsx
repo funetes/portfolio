@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledBurger } from "./Burger.style";
+import PropTypes from "prop-types";
 
 const Burger = ({ open, setOpen }) => {
   return (
@@ -9,6 +10,11 @@ const Burger = ({ open, setOpen }) => {
       <div />
     </StyledBurger>
   );
+};
+
+Burger.propTypes = {
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
 
 export default Burger;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { fadeIn } from "../../utils";
 import Modal from "../modal/Modal";
+import PropTypes from "prop-types";
 
 const Container = styled.div`
   display: flex;
@@ -113,6 +114,10 @@ const Project = ({ project }) => {
       />
     </Container>
   );
+};
+
+Project.propTypes = {
+  project: PropTypes.object.isRequired,
 };
 
 export default Project;

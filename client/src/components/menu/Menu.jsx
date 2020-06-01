@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledMenu, StyledLink } from "./Menu.styled";
+import PropTypes from "prop-types";
 const Menu = ({ open, setOpen }) => {
   return (
     <StyledMenu open={open} onClick={() => setOpen(!open)}>
@@ -15,4 +16,10 @@ const Menu = ({ open, setOpen }) => {
     </StyledMenu>
   );
 };
+
+Menu.propTypes = {
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
+};
+
 export default Menu;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const IMG = styled.img`
   width: 100%;
@@ -74,6 +75,10 @@ const Slider = ({ images }) => {
       ))}
     </Container>
   );
+};
+
+Slider.propTypes = {
+  images: PropTypes.array.isRequired,
 };
 
 export default Slider;
