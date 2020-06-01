@@ -6,7 +6,6 @@ import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
 import Burger from "./components/burger/Burger";
 import Menu from "./components/menu/Menu";
-import Modal from "./components/modal/Modal";
 function App() {
   const [open, setOpen] = useState(false);
   const node = useRef();
@@ -22,8 +21,7 @@ function App() {
           <About />
         </Route>
         <Route path="/contact">
-          {/* <Contact /> */}
-          <Modal />
+          <Contact />
         </Route>
         <Route path="/">
           <Home />

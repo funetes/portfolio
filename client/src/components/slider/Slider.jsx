@@ -8,46 +8,52 @@ const IMG = styled.img`
     height: 40vh;
   }
 `;
+
+const Button = styled.button`
+  all: unset;
+  position: absolute;
+  top: 50%;
+  padding: 0.5em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+  }
+`;
+const RightButton = styled(Button)`
+  right: 0%;
+`;
+const LeftButton = styled(Button)`
+  left: 0%;
+`;
+
 const Container = styled.div`
   width: 100%;
-  overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 처리합니다.
+  overflow: hidden;
+  position: relative;
 `;
 
 const SliderContainer = styled.div`
   width: 100%;
-  display: flex; //이미지들을 가로로 나열합니다.
+  display: flex;
 `;
-const Button = styled.button`
-  all: unset;
-  border: 1px solid coral;
-  padding: 0.5em 2em;
-  color: coral;
-  border-radius: 10px;
-  &:hover {
-    transition: all 0.3s ease-in-out;
-    background-color: coral;
-    color: #fff;
-  }
+const Pagination = styled.span`
+  color: ${(props) => (props.isThat ? "red" : "black")};
+  padding: 10px;
+  opacity: 0.8;
+  font-size: 20px;
 `;
-
 const Slider = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
-  const nextSlide = () => {
-    if (currentSlide >= images.length - 1) {
-      // 더 이상 넘어갈 슬라이드가 없으면 슬라이드를 초기화합니다.
-      setCurrentSlide(0);
-    } else {
-      setCurrentSlide(currentSlide + 1);
-    }
-  };
-  const prevSlide = () => {
-    if (currentSlide === 0) {
-      setCurrentSlide(images.length - 1);
-    } else {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
+  const nextSlide = () =>
+    currentSlide >= images.length - 1
+      ? setCurrentSlide(0)
+      : setCurrentSlide(currentSlide + 1);
+  const prevSlide = () =>
+    currentSlide !== 0 ? setCurrentSlide(currentSlide - 1) : null;
   useEffect(() => {
     slideRef.current.style.transition = "all 0.5s ease-in-out";
     slideRef.current.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
@@ -59,8 +65,13 @@ const Slider = ({ images }) => {
           <IMG key={i} src={image} />
         ))}
       </SliderContainer>
-      <Button onClick={prevSlide}>{`<`}</Button>
-      <Button onClick={nextSlide}>{`>`}</Button>
+      <LeftButton onClick={prevSlide}>{`<`}</LeftButton>
+      <RightButton onClick={nextSlide}>{`>`}</RightButton>
+      {images.map((image, i) => (
+        <Pagination key={i} isThat={currentSlide === i}>
+          {"•"}
+        </Pagination>
+      ))}
     </Container>
   );
 };

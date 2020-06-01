@@ -2,21 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Project from "./Project";
 
-const Box = styled.div`
-  /* props 로 넣어준 값을 직접 전달해줄 수 있습니다. */
-  background: ${(props) => props.color || "blue"};
-  padding: 1rem;
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-  @media (min-width: 768px) {
-    width: 100%;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
 const Container = styled.div`
   width: 80vw;
   height: 100vh;
