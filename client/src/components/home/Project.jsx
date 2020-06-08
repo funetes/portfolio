@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { fadeIn } from "../../utils";
 import Modal from "../modal/Modal";
 import PropTypes from "prop-types";
+import Slider from "../slider/Slider";
 
 const Container = styled.div`
   display: flex;
@@ -107,11 +108,9 @@ const Project = ({ project }) => {
           ))}
         </DescriptionList>
       </ProjectDescriptitonContainer>
-      <Modal
-        isOpen={openModal}
-        close={closeModal}
-        projectImg={project.images}
-      />
+      <Modal isOpen={openModal} close={closeModal}>
+        <Slider projectImg={project.images} />
+      </Modal>
     </Container>
   );
 };

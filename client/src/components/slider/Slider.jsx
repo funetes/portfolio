@@ -9,7 +9,6 @@ const IMG = styled.img`
     height: 40vh;
   }
 `;
-
 const Button = styled.button`
   all: unset;
   position: absolute;
@@ -29,13 +28,11 @@ const RightButton = styled(Button)`
 const LeftButton = styled(Button)`
   left: 0%;
 `;
-
 const Container = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
 `;
-
 const SliderContainer = styled.div`
   width: 100%;
   display: flex;
@@ -46,11 +43,13 @@ const Pagination = styled.span`
   opacity: 0.8;
   font-size: 20px;
 `;
-const Slider = ({ images }) => {
+
+const Slider = ({ projectImg }) => {
+  console.log(projectImg);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const nextSlide = () =>
-    currentSlide >= images.length - 1
+    currentSlide >= projectImg.length - 1
       ? setCurrentSlide(0)
       : setCurrentSlide(currentSlide + 1);
   const prevSlide = () =>
@@ -62,13 +61,13 @@ const Slider = ({ images }) => {
   return (
     <Container>
       <SliderContainer ref={slideRef}>
-        {images.map((image, i) => (
+        {projectImg.map((image, i) => (
           <IMG key={i} src={image} />
         ))}
       </SliderContainer>
       <LeftButton onClick={prevSlide}>{`<`}</LeftButton>
       <RightButton onClick={nextSlide}>{`>`}</RightButton>
-      {images.map((image, i) => (
+      {projectImg.map((image, i) => (
         <Pagination key={i} isThat={currentSlide === i}>
           {"•"}
         </Pagination>
@@ -78,7 +77,7 @@ const Slider = ({ images }) => {
 };
 
 Slider.propTypes = {
-  images: PropTypes.array.isRequired,
+  projectImg: PropTypes.array.isRequired,
 };
 
 export default Slider;

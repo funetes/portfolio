@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { fadeIn } from "../../utils";
+import Modal from "../modal/Modal";
+import ConfirmEmail from "./ConfirmEmail";
+import axios from "axios";
 
 const Contatiner = styled.div`
   width: 50vw;
@@ -31,15 +34,12 @@ const ContactForm = styled.form`
   justify-content: center;
   @media (max-width: 480px) {
     width: 100%;
-    /* height: 30vh; */
-    /* flex-direction: column;
-    justify-content: flex-start; */
   }
 `;
-
 const Input = styled.input`
   height: 50%;
   &:nth-child(1) {
+    padding-left: 1em;
     width: 90%;
     height: 20%;
     border-radius: 5px;
@@ -62,28 +62,86 @@ const Input = styled.input`
 const Info = styled.p`
   margin: 10px 0px;
 `;
+
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
 const Contact = () => {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+  const [openModal, setOpenModal] = useState(false);
+  const [rezumeSended, setRezumeSended] = useState(false);
+  const [sendMsg, setSendMsg] = useState("");
+  const handleErrMsg = (msg) => {
+    setErrMsg(msg);
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+    setTimeout(() => {
+      setErrMsg("");
+    }, 3000);
+  };
+  const sendConfirmWordsToThisEmail = async (email) => {
+    console.log("dd", email);
+    return await axios.post("http://localhost:3001/", {
+      email,
+    });
+  };
+  const requstRezume = async (words, email) => {
+    console.log("dd", email);
+    return await axios.post("http://localhost:3001/comfirm", {
+      words,
+      email,
+    });
+  };
   const onSubmit = (e) => {
     e.preventDefault();
-    if (email.length === 0) {
-      return;
+    if (!validateEmail(email)) {
+      setError(true);
+      handleErrMsg("올바른 email을 적어주세요.");
+      return null;
     }
-    e.target[0].value = "";
-    // open modal or snack bar
-    console.log("submit!");
-    setEmail("");
+    try {
+      sendConfirmWordsToThisEmail(email);
+      setOpenModal(true);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      e.target[0].value = "";
+    }
   };
   const onChange = (e) => {
     setEmail(e.target.value);
   };
+  const closeModal = () => {
+    setOpenModal(false);
+  };
+
+  const sendRezume = async (words) => {
+    try {
+      await requstRezume(words, email);
+      setSendMsg("해당 메일로 이력서가 전송되었습니다. 감사합니다.");
+      setRezumeSended(true);
+      setTimeout(() => {
+        setRezumeSended(false);
+      }, 3000);
+    } catch (error) {
+      handleErrMsg("전송에 실패했습니다.");
+    } finally {
+      closeModal();
+      setEmail("");
+    }
+  };
+
   return (
     <Contatiner>
       <Title>Contact</Title>
-      <Info>if you write your email to this, i`will send my rezume.</Info>
+      <Info>이 곳에 email을 작성해주시면, 제 이력서를 보내드립니다.</Info>
       <ContactForm onSubmit={onSubmit}>
         <Input
-          type="email"
+          type="text"
           name="email"
           onChange={onChange}
           autoComplete="off"
@@ -91,6 +149,15 @@ const Contact = () => {
         />
         <Input type="submit" value="SEND" />
       </ContactForm>
+      <Modal isOpen={openModal} close={closeModal}>
+        <ConfirmEmail
+          sendRezume={sendRezume}
+          close={closeModal}
+          setEmail={setEmail}
+        />
+      </Modal>
+      {error ? errMsg : null}
+      {rezumeSended ? sendMsg : null}
     </Contatiner>
   );
 };

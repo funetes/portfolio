@@ -18,7 +18,7 @@ const Content = styled.div`
   top: 50%;
   left: 50%;
   border-radius: 10px;
-  background-color: white;
+  background-color: transparent;
   transform: translate(-50%, -50%);
   @media (max-width: 480px) {
     top: 40%;
@@ -27,16 +27,15 @@ const Content = styled.div`
   animation: ${fadeIn} 0.5s linear;
 `;
 
-const Modal = ({ isOpen, close, projectImg }) => {
+const Modal = ({ isOpen, close, children }) => {
+  // 추후 projectImg는 redux store에서 받는것으로 변경해야함.
   // projectImg는 서버에서 불러오는게 좋지 않을까?
   return (
     <>
       {isOpen ? (
         <>
           <ModalOverlay onClick={close} />
-          <Content>
-            <Slider images={projectImg} />
-          </Content>
+          <Content>{children}</Content>
         </>
       ) : null}
     </>
@@ -46,7 +45,7 @@ const Modal = ({ isOpen, close, projectImg }) => {
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired,
-  projectImg: PropTypes.array.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Modal;
