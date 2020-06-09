@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledMenu, StyledLink } from "./Menu.styled";
+import { StyledMenu, StyledLink } from "./styled";
 import PropTypes from "prop-types";
 const Menu = ({ open, setOpen }) => {
   return (

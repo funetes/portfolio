@@ -1,20 +1,38 @@
 {
   "files": {
-    "main.js": "/static/js/main.f67c8229.chunk.js",
-    "main.js.map": "/static/js/main.f67c8229.chunk.js.map",
+    "main.js": "/static/js/main.e43949d9.chunk.js",
+    "main.js.map": "/static/js/main.e43949d9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8c40394c.js",
     "runtime-main.js.map": "/static/js/runtime-main.8c40394c.js.map",
-    "static/js/2.e43fc704.chunk.js": "/static/js/2.e43fc704.chunk.js",
-    "static/js/2.e43fc704.chunk.js.map": "/static/js/2.e43fc704.chunk.js.map",
+    "static/js/2.a6955316.chunk.js": "/static/js/2.a6955316.chunk.js",
+    "static/js/2.a6955316.chunk.js.map": "/static/js/2.a6955316.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b3cd9118065280b84ce953b656eeaee0.js": "/precache-manifest.b3cd9118065280b84ce953b656eeaee0.js",
+    "precache-manifest.610ae8e3f42c9c267f91bbe1711b23dd.js": "/precache-manifest.610ae8e3f42c9c267f91bbe1711b23dd.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.e43fc704.chunk.js.LICENSE.txt": "/static/js/2.e43fc704.chunk.js.LICENSE.txt",
-    "static/media/intro.png": "/static/media/intro.71ed8281.png"
+    "static/js/2.a6955316.chunk.js.LICENSE.txt": "/static/js/2.a6955316.chunk.js.LICENSE.txt",
+    "static/media/achievement.gif": "/static/media/achievement.c0ae1dfa.gif",
+    "static/media/add&deleteComment.gif": "/static/media/add&deleteComment.acedb877.gif",
+    "static/media/createEvent.gif": "/static/media/createEvent.1e3609ea.gif",
+    "static/media/darkmode.gif": "/static/media/darkmode.71de487f.gif",
+    "static/media/home&TV&Deatil.gif": "/static/media/home&TV&Deatil.5e052267.gif",
+    "static/media/intro.png": "/static/media/intro.eb19213a.png",
+    "static/media/jointoEvent.gif": "/static/media/jointoEvent.13ebc2ff.gif",
+    "static/media/login.gif": "/static/media/login.acf4b32e.gif",
+    "static/media/loginWithGithub.gif": "/static/media/loginWithGithub.cc8cf6b7.gif",
+    "static/media/qeustRegister.gif": "/static/media/qeustRegister.aed9bfa5.gif",
+    "static/media/rank.gif": "/static/media/rank.0682ad94.gif",
+    "static/media/registerQuestion.gif": "/static/media/registerQuestion.3b1ba8fa.gif",
+    "static/media/search.gif": "/static/media/search.3de90787.gif",
+    "static/media/showvideo.gif": "/static/media/showvideo.55b56509.gif",
+    "static/media/siginup.gif": "/static/media/siginup.71cb5b7a.gif",
+    "static/media/signupAndLogin.gif": "/static/media/signupAndLogin.2205018c.gif",
+    "static/media/store.gif": "/static/media/store.1ff6934c.gif",
+    "static/media/upload.gif": "/static/media/upload.5fd52806.gif",
+    "static/media/userInfo.gif": "/static/media/userInfo.52268315.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.8c40394c.js",
-    "static/js/2.e43fc704.chunk.js",
-    "static/js/main.f67c8229.chunk.js"
+    "static/js/2.a6955316.chunk.js",
+    "static/js/main.e43949d9.chunk.js"
   ]
 }

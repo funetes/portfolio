@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledBurger } from "./Burger.style";
+import { StyledBurger } from "./styled";
 import PropTypes from "prop-types";
 
 const Burger = ({ open, setOpen }) => {

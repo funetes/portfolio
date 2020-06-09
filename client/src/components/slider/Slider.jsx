@@ -38,14 +38,13 @@ const SliderContainer = styled.div`
   display: flex;
 `;
 const Pagination = styled.span`
-  color: ${(props) => (props.isThat ? "red" : "black")};
+  color: ${(props) => (props.isThat ? "red" : "#faeee7")};
   padding: 10px;
   opacity: 0.8;
   font-size: 20px;
 `;
 
 const Slider = ({ projectImg }) => {
-  console.log(projectImg);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const nextSlide = () =>
