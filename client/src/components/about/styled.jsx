@@ -2,15 +2,16 @@ import styled from "styled-components";
 import { fadeIn } from "../../utils";
 export const Container = styled.div`
   display: flex;
-  margin-top: 30px;
   justify-content: center;
   align-items: flex-start;
   width: 80vw;
   height: 80vh;
   background-color: #303960;
-  padding: 1em;
+  margin: 60px 0px;
+  padding: 16px;
   border-radius: 5px;
   @media (max-width: 480px) {
+    height: 100%;
     flex-direction: column;
     justify-content: flex-start;
   }

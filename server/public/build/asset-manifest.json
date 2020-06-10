@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.74258158.chunk.js",
-    "main.js.map": "/static/js/main.74258158.chunk.js.map",
+    "main.js": "/static/js/main.1794e060.chunk.js",
+    "main.js.map": "/static/js/main.1794e060.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8c40394c.js",
     "runtime-main.js.map": "/static/js/runtime-main.8c40394c.js.map",
     "static/js/2.9fb5a2ea.chunk.js": "/static/js/2.9fb5a2ea.chunk.js",
     "static/js/2.9fb5a2ea.chunk.js.map": "/static/js/2.9fb5a2ea.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ca0ac3035c4c898539a8e12353fd887c.js": "/precache-manifest.ca0ac3035c4c898539a8e12353fd887c.js",
+    "precache-manifest.7222a3a3e75408d3e2b2ab5b7730808e.js": "/precache-manifest.7222a3a3e75408d3e2b2ab5b7730808e.js",
     "service-worker.js": "/service-worker.js",
     "static/js/2.9fb5a2ea.chunk.js.LICENSE.txt": "/static/js/2.9fb5a2ea.chunk.js.LICENSE.txt",
     "static/media/achievement.gif": "/static/media/achievement.c0ae1dfa.gif",
@@ -41,6 +41,6 @@
   "entrypoints": [
     "static/js/runtime-main.8c40394c.js",
     "static/js/2.9fb5a2ea.chunk.js",
-    "static/js/main.74258158.chunk.js"
+    "static/js/main.1794e060.chunk.js"
   ]
 }

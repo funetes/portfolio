@@ -45,6 +45,10 @@ export const SLinkWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 `;
 
 export const SLink = styled.a`
@@ -58,6 +62,7 @@ export const SLink = styled.a`
   transition: color 0.3s linear;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
     font-size: 1.5rem;
     text-align: center;
   }

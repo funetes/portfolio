@@ -6,8 +6,9 @@ const rezume = require("./routes/resume");
 const sequelize = require("./models/index").sequelize;
 const cors = require("cors");
 const app = express();
+require("dotenv").config();
 sequelize.sync();
-const PORT = 3001;
+const PORT = process.env.NODE_ENV === "production" ? 5000 : 3001;
 
 app.use(morgan("dev"));
 app.use(cors());
@@ -21,6 +22,22 @@ app.get("*", (req, res) =>
 
 app.use("/rezume", rezume);
 
-app.listen(PORT, () =>
-  console.log(`Example app listening at http://localhost:${PORT}`)
-);
+// var API_KEY = "1f904ea60ff0277e3c02d23be419c15b-8b34de1b-bf6fc051";
+// var DOMAIN = "sandbox29d313bacec0459bb1b89d0bf466cfd3.mailgun.org";
+// var mailgun = require("mailgun-js")({ apiKey: API_KEY, domain: DOMAIN });
+
+// const data = {
+//   from: "kimlove1020@hanmail.net",
+//   to: "icebear0629@gmail.com",
+//   subject: "Hello",
+//   text: "Testing some Mailgun awesomeness!",
+// };
+
+// mailgun.messages().send(data, (error, body) => {
+//   if (error) {
+//     console.log(error);
+//   }
+//   console.log(body);
+// });
+
+app.listen(PORT, () => console.log(`server start at this port : ${PORT}`));

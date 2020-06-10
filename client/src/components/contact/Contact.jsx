@@ -3,8 +3,19 @@ import { validateEmail } from "../../utils";
 import Modal from "../modal/Modal";
 import ConfirmEmail from "./ConfirmEmail";
 import axios from "axios";
-import { Contatiner, Title, ContactForm, Input, Info } from "./ContactStyled";
-
+import {
+  Contatiner,
+  Title,
+  ContactForm,
+  Input,
+  Info,
+  Page,
+} from "./ContactStyled";
+const PORT = process.env.NODE_ENV === "production" ? 8080 : 3001;
+const SERVER =
+  process.env.NODE_ENV === "production"
+    ? "http://artdev.me:"
+    : "http://localhost:";
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
@@ -26,7 +37,7 @@ const Contact = () => {
   };
   const sendConfirmWordsToThisEmail = async (email) => {
     try {
-      await axios.post("http://localhost:3001/rezume", {
+      await axios.post(`${SERVER}${PORT}/rezume`, {
         email,
       });
     } catch (error) {
@@ -38,7 +49,7 @@ const Contact = () => {
   const sendRezume = async (word, email) => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:3001/rezume/comfirm", {
+      await axios.post(`${SERVER}${PORT}/rezume/comfirm`, {
         word,
         email,
       });
@@ -75,31 +86,33 @@ const Contact = () => {
   const closeModal = () => setOpenModal(false);
 
   return (
-    <Contatiner>
-      <Title>Contact</Title>
-      <Info>email을 작성해 주시면, 이력서를 보내드립니다.</Info>
-      <ContactForm onSubmit={onSubmit}>
-        <Input
-          type="text"
-          name="email"
-          onChange={onChange}
-          autoComplete="off"
-          placeholder="Write Your Email..."
-        />
-        <Input type="submit" value="SEND" />
-        {error ? errMsg : null}
-        {rezumeSended ? sendMsg : null}
-      </ContactForm>
-      <Modal isOpen={openModal} close={closeModal}>
-        <ConfirmEmail
-          sendRezume={sendRezume}
-          close={closeModal}
-          setEmail={setEmail}
-          email={email}
-          loading={loading}
-        />
-      </Modal>
-    </Contatiner>
+    <Page>
+      <Contatiner>
+        <Title>Contact</Title>
+        <Info>email을 작성해 주시면, 이력서를 보내드립니다.</Info>
+        <ContactForm onSubmit={onSubmit}>
+          <Input
+            type="text"
+            name="email"
+            onChange={onChange}
+            autoComplete="off"
+            placeholder="Write Your Email..."
+          />
+          <Input type="submit" value="SEND" />
+          {error ? errMsg : null}
+          {rezumeSended ? sendMsg : null}
+        </ContactForm>
+        <Modal isOpen={openModal} close={closeModal}>
+          <ConfirmEmail
+            sendRezume={sendRezume}
+            close={closeModal}
+            setEmail={setEmail}
+            email={email}
+            loading={loading}
+          />
+        </Modal>
+      </Contatiner>
+    </Page>
   );
 };
 

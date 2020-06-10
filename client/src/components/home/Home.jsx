@@ -5,7 +5,6 @@ import { projectsArr } from "../../projects";
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
   padding: 60px 0px;
   display: flex;
   flex-direction: column;
