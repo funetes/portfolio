@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const words = require("../randomWords");
+const words = require("../utils/randomWords");
 const fs = require("fs");
 const sgMail = require("@sendgrid/mail");
 const { Email } = require("../models");
