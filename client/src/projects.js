@@ -15,6 +15,7 @@ export const projectsArr = [
     title: "QuestRunner",
     position: "front-end",
     stack: ["React", "React-redux", "Typescript", "Material-UI"],
+    deploy: "https://go.aws/2LF8cnA",
     gitHub: "https://github.com/funetes/QuestRunner-client-mirrored",
     description: [
       "TodoList와 Gamification이 융합되어진 서비스",
@@ -44,6 +45,7 @@ export const projectsArr = [
       "AWS-RDS",
       "AWS-EC2",
     ],
+    deploy: "https://go.aws/2WLMdBJ",
     gitHub: "https://github.com/funetes/Questionnaire-Server-mirrored",
     description: [
       "익명 질문자 질의응답(Q&A) 서비스",
@@ -62,6 +64,7 @@ export const projectsArr = [
     title: "Meflix",
     position: "front-end",
     stack: ["React", "React-hooks", "Styled-componets"],
+    deploy: "https://meflix.netlify.app/#/",
     gitHub: "https://github.com/funetes/netflixPractice",
     description: [
       "Netflix Clone",
@@ -82,6 +85,8 @@ export const projectsArr = [
     title: "Wetube",
     position: "full-stack",
     stack: ["NodeJS", "MongoDB", "Pug(jade)"],
+    deploy: "https://bit.ly/2WO8xe5",
+    gitHub: "https://github.com/funetes/wetube-final",
     description: [
       "Youtube Clone",
       "Momadcorders Clone Project",

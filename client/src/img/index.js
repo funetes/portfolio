@@ -32,13 +32,6 @@ export const wetube = {
   showVideo: require("./wetube/showvideo.gif"),
   upload: require("./wetube/upload.gif"),
 };
-// [
-//     "SocketIO",
-//     "Jwt",
-//     "Git",
-//     "Redux",
-//     "Styled-Component",
-//   ],
 export const stackIcon = {
   strong: {
     html: require("./stackIcon/html.png"),
@@ -57,3 +50,6 @@ export const stackIcon = {
     styledComponent: require("./stackIcon/styled-componenet.png"),
   },
 };
+
+export const gitHubIcon = require("./icons/github50.png");
+export const blogIcon = require("./icons/tutleDevLogo.jpeg");

@@ -10,8 +10,8 @@ import {
   Position,
   StackList,
   Stack,
-  GithubContainer,
-  Github,
+  GithubDeployContainer,
+  GithubAndDeploy,
   DescriptionList,
   Description,
 } from "./styled";
@@ -40,12 +40,26 @@ const Project = ({ project }) => {
             </Stack>
           ))}
         </StackList>
-        <GithubContainer>
+        <GithubDeployContainer>
+          Deploy :{" "}
+          <GithubAndDeploy
+            href={project.deploy}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Go There
+          </GithubAndDeploy>
+        </GithubDeployContainer>
+        <GithubDeployContainer>
           Github :{" "}
-          <Github href={project.gitHub} target="_blank">
+          <GithubAndDeploy
+            href={project.gitHub}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {project.title}
-          </Github>
-        </GithubContainer>
+          </GithubAndDeploy>
+        </GithubDeployContainer>
         <DescriptionList>
           {project.description.map((description, i) => (
             <Description key={i}>{description}</Description>

@@ -68,13 +68,15 @@ export const StackIcon = styled.image`
   border: 1px solid black;
 `;
 
-export const GithubContainer = styled.div`
+export const GithubDeployContainer = styled.div`
   text-align: left;
   margin-bottom: 3px;
+  display: block;
 `;
-export const Github = styled.a`
+export const GithubAndDeploy = styled.a`
   color: #edf492;
 `;
+
 export const DescriptionList = styled.ul`
   margin-top: 15px;
   display: flex;
