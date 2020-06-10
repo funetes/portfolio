@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "portfoilo",
+      "script": "index.js",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "production",
+        "API_PORT": 8080
+      }
+    }
+  ]
+}
