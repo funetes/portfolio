@@ -8,7 +8,7 @@ const cors = require("cors");
 const app = express();
 require("dotenv").config();
 sequelize.sync();
-const PORT = process.env.NODE_ENV === "production" ? 5000 : 3001;
+const PORT = process.env.NODE_ENV === "production" ? 8080 : 3001;
 
 app.use(morgan("dev"));
 app.use(cors());
