@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40fa47c18d9ff8e530a3be0c3cf78dc8",
+    "revision": "52c7ed4f9ac6ae98dedbb1da4302d7d9",
     "url": "/index.html"
   },
   {
-    "revision": "5f34c782ded2d6484c38",
-    "url": "/static/js/2.a6955316.chunk.js"
+    "revision": "c201c4481223acf57099",
+    "url": "/static/js/2.9fb5a2ea.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/static/js/2.a6955316.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.9fb5a2ea.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3f7bcd0d71dbe87f8fea",
-    "url": "/static/js/main.e43949d9.chunk.js"
+    "revision": "13ac1be5d92d67ef2ec9",
+    "url": "/static/js/main.74258158.chunk.js"
   },
   {
     "revision": "13c5ce7c89dba05c4fba",
@@ -32,8 +32,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/createEvent.1e3609ea.gif"
   },
   {
+    "revision": "5c4e16ceb77211d7b286e351e272328d",
+    "url": "/static/media/css.5c4e16ce.png"
+  },
+  {
     "revision": "71de487f42c984dbbee4aa8db5280248",
     "url": "/static/media/darkmode.71de487f.gif"
+  },
+  {
+    "revision": "707777a88bc9b072c1501428c2fac919",
+    "url": "/static/media/express.707777a8.jpg"
   },
   {
     "revision": "5e052267d5cd0126e8e98b9f0296c043",
@@ -56,6 +64,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/intro.eb19213a.png"
   },
   {
+    "revision": "5bd5ac0e1b2731d7ad24dd1b962e1811",
+    "url": "/static/media/javascript.5bd5ac0e.png"
+  },
+  {
     "revision": "13ebc2ff4280b0e43b36ee152ef05bfd",
     "url": "/static/media/jointoEvent.13ebc2ff.gif"
   },
@@ -68,6 +80,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/loginWithGithub.cc8cf6b7.gif"
   },
   {
+    "revision": "72b8277a61f779d0b187878393ae6569",
+    "url": "/static/media/mysql.72b8277a.png"
+  },
+  {
     "revision": "aed9bfa5e31b5790f4476f1e1cc947df",
     "url": "/static/media/qeustRegister.aed9bfa5.gif"
   },
@@ -76,12 +92,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/rank.0682ad94.gif"
   },
   {
+    "revision": "d6bdcfb24f57bffcd8e8b695f75ef263",
+    "url": "/static/media/react.d6bdcfb2.png"
+  },
+  {
+    "revision": "75349fec4d10c300f31f2ad2efac2a45",
+    "url": "/static/media/redux.75349fec.png"
+  },
+  {
     "revision": "3b1ba8fa5f39bcfb2374943f353eedeb",
     "url": "/static/media/registerQuestion.3b1ba8fa.gif"
   },
   {
     "revision": "3de90787b85a3041ee2e9b1e39fb945c",
     "url": "/static/media/search.3de90787.gif"
+  },
+  {
+    "revision": "0cc16e1530603ca7738543ae6d2ee50a",
+    "url": "/static/media/sequelize.0cc16e15.png"
   },
   {
     "revision": "55b56509eaf07a381dbc955adf852b90",
@@ -98,6 +126,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1ff6934c499fb2b362060742bda64d0a",
     "url": "/static/media/store.1ff6934c.gif"
+  },
+  {
+    "revision": "090497dcf4c95b3ee618e301a0eebeb4",
+    "url": "/static/media/tutleDevLogo.090497dc.jpeg"
   },
   {
     "revision": "5fd52806692ec4c7c0a5db266756be58",
