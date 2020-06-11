@@ -53,3 +53,4 @@ export const stackIcon = {
 
 export const gitHubIcon = require("./icons/github50.png");
 export const blogIcon = require("./icons/tutleDevLogo.jpeg");
+export const me = require("./me.jpeg");

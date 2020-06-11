@@ -1,5 +1,13 @@
 import styled from "styled-components";
 import { fadeIn } from "../../utils";
+export const AboutPage = styled.div`
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 60px 0px;
+`;
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -7,8 +15,9 @@ export const Container = styled.div`
   width: 80vw;
   height: 80vh;
   background-color: #303960;
-  margin: 60px 0px;
+  /* margin: 60px 0px; */
   padding: 16px;
+  /* padding: 60px 0px; */
   border-radius: 5px;
   @media (max-width: 480px) {
     height: 100%;
@@ -18,7 +27,7 @@ export const Container = styled.div`
   animation: ${fadeIn} 1s linear;
 `;
 
-export const Title = styled.h1`
+export const StcakTitle = styled.h1`
   font-size: 30px;
   margin-bottom: 5px;
   @media (max-width: 480px) {

@@ -26,7 +26,7 @@ const Summary = styled.p`
 `;
 const Temp = () => {
   return (
-    <TempContainer>
+    <TempContainer id="contact">
       <Summary>아래 메일로 요청을 주시면 이력서를 보내드립니다. </Summary>
       <Email
         href="mailto: kimlove2324@gmail.com"

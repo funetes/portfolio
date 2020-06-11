@@ -14,7 +14,7 @@ import {
 const PORT = process.env.NODE_ENV === "production" ? 8080 : 3001;
 const SERVER =
   process.env.NODE_ENV === "production"
-    ? "http://artdev.me:"
+    ? "http://www.artdev.me:"
     : "http://localhost:";
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -86,7 +86,7 @@ const Contact = () => {
   const closeModal = () => setOpenModal(false);
 
   return (
-    <Page>
+    <Page id="contact">
       <Contatiner>
         <Title>Contact</Title>
         <Info>email을 작성해 주시면, 이력서를 보내드립니다.</Info>

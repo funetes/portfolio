@@ -1,48 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import {
+  IMG,
+  RightButton,
+  LeftButton,
+  Container,
+  SliderContainer,
+  Pagination,
+} from "./styled";
 import PropTypes from "prop-types";
-
-const IMG = styled.img`
-  width: 100%;
-  height: 70vh;
-  @media (max-width: 480px) {
-    height: 40vh;
-  }
-`;
-const Button = styled.button`
-  all: unset;
-  position: absolute;
-  top: 50%;
-  padding: 0.5em;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.3);
-  &:hover {
-    transition: all 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-  }
-`;
-const RightButton = styled(Button)`
-  right: 0%;
-`;
-const LeftButton = styled(Button)`
-  left: 0%;
-`;
-const Container = styled.div`
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-`;
-const SliderContainer = styled.div`
-  width: 100%;
-  display: flex;
-`;
-const Pagination = styled.span`
-  color: ${(props) => (props.isThat ? "red" : "#faeee7")};
-  padding: 10px;
-  opacity: 0.8;
-  font-size: 20px;
-`;
 
 const Slider = ({ projectImg }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

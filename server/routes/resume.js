@@ -2,11 +2,14 @@ require("dotenv").config();
 const express = require("express");
 const words = require("../utils/randomWords");
 const fs = require("fs");
-const sgMail = require("@sendgrid/mail");
+const mailgun = require("mailgun-js");
 const { Email } = require("../models");
+const { createRandomWord } = require("../utils/util");
 
 const router = express.Router();
-const { createRandomWord } = require("../utils/util");
+
+const DOMAIN = "www.artdev.me";
+const mg = mailgun({ apiKey: process.env.MAILGUN_API_KEY, domain: DOMAIN });
 
 router.post("/", async (req, res) => {
   // email table에 comfirm column을 넣어서 없으면 다시 보낼수 있게 만들자.
@@ -22,16 +25,20 @@ router.post("/", async (req, res) => {
 
   if (data === null) {
     // 인증문자 전송
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    const msg = {
+    const data = {
+      from: "icebear0629@gmail.com",
       to: email,
-      from: "kimlove1020@hanmail.net",
       subject: "[인증]Rezume_김환",
       text: "email 인증을 위한 단어를 입력해주세요.",
       html: `<p>email 인증을 위한 단어를 입력해주세요.<p><strong>${word}</strong>`,
     };
     try {
-      await sgMail.send(msg);
+      mg.messages().send(data, function (error, body) {
+        if (error) {
+          throw Error(error);
+        }
+        console.log(body);
+      });
       await Email.create({
         email,
         word,
@@ -79,22 +86,24 @@ router.post("/comfirm", async (req, res) => {
         }
       );
       const pathToAttachment = `${__dirname}/../rezume/FrontEnd_kimHwan.pdf`;
-      const attachment = fs.readFileSync(pathToAttachment).toString("base64");
-      const msg = {
+      const attachment = fs.readFileSync(pathToAttachment);
+      const attch = new mailgun.Attachment({
+        data: attachment,
+        filename: "FrontEnd_김환.pdf",
+      });
+      const data = {
         to: email,
-        from: "kimlove1020@hanmail.net",
+        from: "icebear0629@gmail.com",
         subject: "[Rezume]김환",
         html: "<p>이력서는 한번만 제공해드립니다. 감사합니다.</p>",
-        attachments: [
-          {
-            content: attachment,
-            filename: "FrontEnd_김환.pdf",
-            type: "application/pdf",
-            disposition: "attachment",
-          },
-        ],
+        attachments: attch,
       };
-      await sgMail.send(msg);
+      mailgun.messages().send(data, function (error, body) {
+        if (error) {
+          throw Error(error);
+        }
+        console.log(body);
+      });
       res.send("ok");
     }
   } catch (error) {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 export const StyledMenu = styled.nav`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   display: flex;
@@ -21,9 +21,10 @@ export const StyledMenu = styled.nav`
 `;
 
 export const StyledLink = styled(Link)`
+  cursor: pointer;
   font-size: 2rem;
   text-transform: uppercase;
-  padding: 2rem 0;
+  padding: 1rem 0;
   font-weight: bold;
   letter-spacing: 0.5rem;
   color: ${({ theme }) => theme.primaryDark};
@@ -37,6 +38,9 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.primaryHover};
+  }
+  .activeClass {
+    border-bottom: 1px solid #333;
   }
 `;
 
@@ -54,7 +58,7 @@ export const SLinkWrapper = styled.div`
 export const SLink = styled.a`
   font-size: 2rem;
   text-transform: uppercase;
-  padding: 2rem 0;
+  padding: 1rem 0;
   font-weight: bold;
   letter-spacing: 0.5rem;
   color: ${({ theme }) => theme.primaryDark};
