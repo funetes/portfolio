@@ -6,11 +6,6 @@ const path = require("path");
 const mailgun = require("mailgun-js");
 const { Email } = require("../models");
 const { createRandomWord } = require("../utils/util");
-
-const filename = "FrontEnd_kimHwan.pdf";
-const filepath = path.join(__dirname, "/../rezume", filename);
-console.log(filepath);
-
 const router = express.Router();
 const DOMAIN = "www.artdev.me";
 const mg = mailgun({ apiKey: process.env.MAILGUN_API_KEY, domain: DOMAIN });
