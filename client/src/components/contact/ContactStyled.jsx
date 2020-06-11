@@ -13,6 +13,7 @@ export const Contatiner = styled.div`
   width: 50vw;
   height: 50vh;
   border: 1px solid white;
+  border-radius: 5px;
   padding: 15px;
   display: flex;
   flex-direction: column;
